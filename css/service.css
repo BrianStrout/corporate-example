@@ -1,0 +1,109 @@
+.pushed-up-blur {
+  position: absolute;
+  z-index: 80;
+  left: 0;
+  top: calc(var(--header-height) * -1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 20.5%,
+    /* rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 1) 37.5%, */ rgba(0, 0, 0, 0)
+      100%
+  );
+  width: 100%;
+  height: var(--header-height);
+  /* background-color: aqua; */
+}
+.pushed-up-blur > div {
+  /* position: absolute; */
+  inset: 0;
+}
+
+/* .pushed-up-blur > div:nth-of-type(1) {
+    z-index: 6;
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 12.5%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  } */
+
+.services-container {
+  position: relative;
+  /* padding-left: 20%; */
+}
+.title-stick-div {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  width: 300px;
+  background-color: antiquewhite;
+}
+
+.section-title {
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.service-floating-container {
+  position: relative;
+  /* position: absolute; */
+  /* top: 20%; */
+  /* left: 250px; */
+  /* z-index: 90; */
+  margin-left: 150px;
+  margin-bottom: 50px;
+  width: 30vw;
+  min-height: 500px;
+  display: grid;
+  /* grid-template-rows: 20% auto; */
+  background-color: fuchsia;
+}
+.float-right {
+  margin-left: auto;
+  margin-right: 105px;
+  margin-top: 30vw;
+}
+.service-floating-image {
+  background-color: blue;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* make a variable */
+  min-height: 100px;
+}
+
+#serv-marketing-img {
+  /* z-index: 20; */
+  background: url("images/abg-em.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#serv-marketing-img2 {
+  /* z-index: 20; */
+  background: url("images/abg-xp.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#serv-marketing-img3 {
+  /* z-index: 20; */
+  background: url("images/abg-pm.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-floating-blurb {
+  margin: 1rem;
+}
+.service-floating-title {
+  font-size: 2rem;
+  font-family: "Nanum Myeongjo", serif;
+}

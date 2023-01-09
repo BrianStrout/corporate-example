@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,14 @@
 }
 
 :root {
-  --sizing-cap: 1400px;
+  --sizing-cap: 1950px;
+  --header-height: 100px;
+  --background: #f4ffd3;
+  --dark-blue: #35414f;
+  --border-blue: #35414f;
+}
+body {
+  background-color: var(--background);
 }
 
 .locon {
@@ -13,26 +21,33 @@
   z-index: 10;
   width: 100%;
   min-height: 100vh;
-  background-color: darkgoldenrod;
+  background-color: var(--background);
   border: 3px solid black;
+}
+.max-width-container {
+  width: 100vw;
+  /* overflow-x: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .site-shell {
   position: relative;
-  width: max(100vw, 1400px);
+  width: 100vw;
+  max-width: var(--sizing-cap);
   min-height: 100vh;
-  background-color: #35414f;
-
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .site-shell > div {
-  max-width: var(--sizing-cap);
 }
 
 .sub-container {
-  padding: 220px 2rem 2rem 2rem;
+  max-width: 1600px;
+  padding: var(--header-height) 2rem 2rem 2rem;
 }
 
 .we-are-hiring {
@@ -47,14 +62,12 @@
 .city-backdrop {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  height: 40vh;
+  max-width: 2000px;
+  height: 60vh;
   min-height: 600px;
-
   background: url("images/hero-south-boston-cityscape.webp");
   background-repeat: none;
   background-size: cover;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,28 +85,34 @@
 }
 .header-back-frame {
   position: sticky;
-  z-index: 5;
-  top: 0;
+  z-index: 2;
+  top: 150px;
   width: 100%;
-  height: 200px;
-  /* display: flex; */
-  /* justify-content: center; */
-  border: 3px solid black;
+  max-height: 0;
+  /* height: var(--header-height); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* padding-bottom: 100px; */
+  /* border: 3px solid black; */
+  transform: translateY(0px);
+  /* background-color: #35414f; */
 }
 .header-clear-frame {
   position: sticky;
   top: 0;
   bottom: 0;
-  height: 200px;
+  /* height: var(--header-height); */
   width: 100%;
-  background-color: bisque;
-  overflow: hidden;
+  /* background-color:  */
+  /* overflow: hidden; */
   display: block;
 }
 
 .company-name-sticker {
   position: absolute;
   font-size: 7vw;
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .header {
@@ -105,73 +124,161 @@
   height: 200px;
   display: flex;
   justify-content: center;
+  /* background-color: var(--background); */
 }
 
-.test {
+/* .test {
   position: absolute;
   z-index: -1;
   top: 0;
   width: 100%;
   height: 200px;
-}
+} */
 
 .logo-container {
   /* position: absolute; */
-  width: 200px;
-  height: 200px;
+
+  width: var(--header-height);
+  height: var(--header-height);
   background: url("images/corp-logo.webp");
   background-size: contain;
 }
 
 .pushed-up-blur {
   position: absolute;
+  z-index: 80;
   left: 0;
-  top: -200px;
+  top: calc(var(--header-height) * -1);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 20.5%,
+    /* rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 37.5%, */ rgba(0, 0, 0, 0) 100%
+  );
   width: 100%;
-  height: 200px;
+  height: var(--header-height);
+  /* background-color: aqua; */
+}
+.pushed-up-blur > div {
+  /* position: absolute; */
+  inset: 0;
 }
 
+/* .pushed-up-blur > div:nth-of-type(1) {
+  z-index: 6;
+  backdrop-filter: blur(1px);
+  mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 12.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
 .services-container {
+  position: relative;
   /* padding-left: 20%; */
 }
 .title-stick-div {
   position: sticky;
-  top: 200px;
+  z-index: 5;
+  top: 0;
   width: 300px;
   background-color: antiquewhite;
 }
 
 .section-title {
 }
-.service-floating-container {
-  margin-left: 300px;
-  margin-bottom: 50px;
-  width: 30%;
-  min-height: 500px;
 
+.service-grid {
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 1fr var(--header-height) 1fr;
+  background-color: forestgreen;
+}
+.service-grid-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* justify-content: flex-end; */
+  background-color: rgb(34, 44, 178);
+}
+.gap {
+  background-color: deeppink;
+}
+
+.service-grid-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-floating-container {
+  position: relative;
+  /* position: absolute; */
+  /* top: 20%; */
+  /* left: 250px; */
+  /* z-index: 90; */
+  /* margin-left: 150px; */
+  margin: 1rem;
+  margin-bottom: 50px;
+  width: 30vw;
+  min-height: 500px;
+  display: grid;
+  /* grid-template-rows: 20% auto; */
   background-color: fuchsia;
+
+  border: 5px solid var(--border-blue);
+  border-radius: 20px;
 }
 .float-right {
-  margin-left: auto;
-  margin-right: 10%;
-
-  update grid layout
+  /* margin-left: auto; */
+  /* margin-right: 105px; */
+  margin-top: 30vw;
 }
 .service-floating-image {
   background-color: blue;
   width: 100%;
+  aspect-ratio: 1 / 1;
   /* make a variable */
-  height: 100px;
+  min-height: 100px;
+  /* border: inherit; */
+  border-radius: 15px 15px 0px 0px;
 }
+
+#serv-marketing-img {
+  /* z-index: 20; */
+  background: url("images/abg-em.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#serv-marketing-img2 {
+  /* z-index: 20; */
+  background: url("images/abg-xp.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#serv-marketing-img3 {
+  /* z-index: 20; */
+  background: url("images/abg-pm.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .service-floating-blurb {
   margin: 1rem;
 }
 .service-floating-title {
+  font-size: 2rem;
+  font-family: "Nanum Myeongjo", serif;
+}
+.service-floating-blurb > p {
+  font-size: 1.25rem;
+  text-indent: 2rem;
+  margin-top: 1rem;
 }
 
 .culture-container {
