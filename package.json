@@ -1,0 +1,22 @@
+{
+  "name": "corporate-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianStrout/corporate-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianStrout/corporate-example/issues"
+  },
+  "homepage": "https://github.com/BrianStrout/corporate-example#readme",
+  "dependencies": {
+    "intersection-observer": "^0.12.2"
+  }
+}
