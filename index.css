@@ -311,6 +311,18 @@ body {
   border: 5px solid var(--border-blue);
   /* border-radius: 50% 50% 0 0; */
 }
+
+.loadMe {
+  opacity: 10%;
+  transform: translateY(20vh);
+  transition: opacity 1.5s ease-out, transform 2s;
+}
+
+.appear {
+  transform: translateY(0px);
+  opacity: 100%;
+}
+
 .float-right {
   /* margin-left: auto; */
   /* margin-right: 105px; */
