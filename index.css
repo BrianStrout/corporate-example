@@ -471,14 +471,18 @@ body {
 
 #img-flipper {
   width: 100%;
+  object-fit: cover;
 }
 
 .our-culture {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   height: 100%;
   /* background-color: cadetblue; */
+  padding: 1.5rem;
   padding-bottom: 10%;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 /* .image-row-container > div:nth-child(2) {
   position: absolute;
@@ -486,8 +490,8 @@ body {
 } */
 #culture1 {
   height: 50%;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.509);
-  background: url("images/abg-ho.webp");
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.509); */
+  /* background: url("images/joel-muniz-A4Ax1ApccfA-unsplash.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   position: sticky;
@@ -497,16 +501,16 @@ body {
 #culture2 {
   width: 50vh;
   height: 50vh;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.509);
-  background: url("images/abg-ce.webp");
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.509); */
+  /* background: url("images/austin-distel-rxpThOwuVgE-unsplash.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
 }
 #culture3 {
   width: 50vh;
   height: 50vh;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.509);
-  background: url("images/abg-hf.webp");
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.509); */
+  /* background: url("images/brooke-cagle--uHVRvDr7pg-unsplash.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
 }
