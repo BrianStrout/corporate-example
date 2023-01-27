@@ -1,14 +1,20 @@
-console.log("connected");
 const images = document.querySelectorAll(".sense");
 const blurbs = document.querySelectorAll(".watered");
-console.log(blurbs);
 const logo = document.getElementById("logo");
 const b1 = "images/joel-muniz-A4Ax1ApccfA-unsplash.jpg";
 const b2 = "images/austin-distel-rxpThOwuVgE-unsplash.jpg";
 const b3 = "images/brooke-cagle--uHVRvDr7pg-unsplash.jpg";
-let image = document.getElementById("img-flipper");
+const jumpToContact = document.getElementById("jumpToContact");
+const contacter = document.getElementById("contacter");
+const image = document.getElementById("img-flipper");
 let currentPos = 0;
 let images2 = [b1, b2, b3];
+
+jumpToContact.addEventListener("click", () => {
+  contacter.scrollIntoView();
+  console.log("contact");
+});
+
 function volgendefoto() {
   if (++currentPos >= images2.length) currentPos = 0;
 
@@ -104,7 +110,6 @@ cultOptions);
 
 obsEnterringCulture.observe(culture);
 
-const contacter = document.getElementById("contacter");
 const contOptions = {
   //   threshold: 0.5,
 };
