@@ -222,11 +222,15 @@ body {
   height: var(--header-height);
   background: url("images/BMS logo.png");
   background-size: contain;
-  transition: transform 2s ease-out 0.5s;
+  transition: transform 1s ease-out 0.5s, opacity 0.5s ease-out;
 }
 
 .logo-right {
   transform: translate(40vw, 10vh);
+}
+
+.logo-gone {
+  opacity: 0%;
 }
 
 .pushed-up-blur {
@@ -320,13 +324,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* justify-content: flex-end; */
-  /* background-color: rgb(34, 44, 178); */
 }
 .gap {
-  /* background-color: deeppink; */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
-
 .service-grid-right {
   display: flex;
   flex-direction: column;
@@ -335,27 +337,21 @@ body {
 
 .service-floating-container {
   position: relative;
-  /* position: absolute; */
-  /* top: 20%; */
-  /* left: 250px; */
-  /* z-index: 90; */
-  /* margin-left: 150px; */
   margin: 1rem;
   margin-bottom: 50px;
   width: 30vw;
-  min-height: 500px;
-  display: grid;
-  /* grid-template-rows: 20% auto; */
-  background-color: rgba(250, 235, 215, 0.496);
-
-  /* border: 5px solid var(--border-blue); */
-  /* border-radius: 50% 50% 0 0; */
+  height: 30vw;
+  max-width: 700px;
+  /* display: grid; */
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: opacity 1s ease-out, transform 1s ease-out, padding 1s ease-out;
 }
 
 .loadMe {
-  opacity: 10%;
+  opacity: 0%;
   transform: translateY(20vh);
-  transition: opacity 1s ease-out, transform 1s;
+  /* transition: opacity 1s ease-out, transform 1s; */
 }
 
 .appear {
@@ -364,50 +360,54 @@ body {
 }
 
 .float-right {
-  /* margin-left: auto; */
-  /* margin-right: 105px; */
   margin-top: 30vw;
 }
 .service-floating-image {
-  background-color: blue;
+  /* background-color: blue; */
   width: auto;
   height: auto;
   aspect-ratio: 1 / 1;
-  /* make a variable */
   min-height: 100px;
-  /* border: inherit; */
-  /* border-radius: 50% 50% 0 0; */
-
-  border: 5px solid var(--border-blue);
 }
 
 #serv-marketing-img {
   /* z-index: 20; */
-  background: url("images/abg-em.webp");
+  background: url("images/headway-F2KRf_QfCqw-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 #serv-marketing-img2 {
   /* z-index: 20; */
-  background: url("images/abg-xp.webp");
+  background: url("images/dylan-gillis-KdeqA3aTnBY-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 #serv-marketing-img3 {
   /* z-index: 20; */
-  background: url("images/abg-pm.webp");
+  background: url("images/scott-graham-5fNmWej4tAA-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .service-floating-blurb {
-  /* margin: 1rem; */
-  background-color: antiquewhite;
   padding: 1rem;
+  opacity: 1;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: filter 0.5s ease-out 1s, -webkit-filter 0.5s ease-out 1s,
+    opacity 0.5s ease-out 1s;
 }
+
+.watered {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  opacity: 0;
+  /* min-height: 30vw */
+}
+
 .service-floating-title {
   font-size: 2rem;
   text-decoration: underline;
@@ -418,19 +418,20 @@ body {
   text-indent: 2rem;
   margin-top: 1rem;
 }
-#city-box {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+
+.city-block {
+  position: relative;
+  margin-left: 10%;
+  width: 80%;
   min-height: 200px;
-  background: url("images/skyline.png");
-  background-size: contain;
+  background: url("images/erik-torres-mTMMKcHBvRg-unsplash.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .culture-container {
   position: relative;
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
 }
 .image-row-background {
   position: absolute;
@@ -476,7 +477,7 @@ body {
   display: flex;
   align-items: flex-end;
   height: 100%;
-  background-color: cadetblue;
+  /* background-color: cadetblue; */
   padding-bottom: 10%;
 }
 /* .image-row-container > div:nth-child(2) {
