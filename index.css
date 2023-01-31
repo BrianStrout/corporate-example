@@ -476,14 +476,22 @@ body {
 
 .our-culture {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   height: 100%;
   /* background-color: cadetblue; */
   padding: 1.5rem;
   padding-bottom: 10%;
+  padding-right: 8rem;
   max-height: 100vh;
   overflow-y: hidden;
 }
+.title {
+  display: inline;
+  text-decoration: underline;
+  margin: 0.5rem 0;
+}
+
 /* .image-row-container > div:nth-child(2) {
   position: absolute;
   z-index: 55;
@@ -550,6 +558,73 @@ body {
   z-index: 70;
   /* border: 5px solid pink; */
   /* background-color: plum; */
+}
+
+.contact-landing > p {
+  margin: 1rem;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+
+  /* background-color: bisque; */
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border: 3px solid black;
+  background-color: var(--dark-blue);
+}
+form > button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100px;
+  height: 1.25rem;
+  margin-left: auto;
+  border-radius: 2.5px;
+}
+form > button:hover {
+  border: 4px solid pink;
+  transform: scale(1.1);
+}
+
+.inactive-button {
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+}
+
+.form-row > label,
+.form-row > input,
+.form-row > textarea {
+  display: inline-block;
+  height: 1.5rem;
+  margin-bottom: 1.5rem;
+  /* margin-right: 1rem; */
+}
+.form-row > label {
+  width: 80px;
+  /* background-color: crimson; */
+  margin-bottom: auto;
+}
+.form-row > input,
+textarea {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-row > textarea {
+  height: 3rem;
 }
 .map-box {
   height: 40vh;
