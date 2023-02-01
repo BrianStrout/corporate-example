@@ -156,3 +156,57 @@ const obsFooter = new IntersectionObserver(function (foots, obsFooter) {
 }, footOptions);
 
 obsFooter.observe(footer);
+
+const formEmail = document.querySelector('input[type="email"]');
+const formName = document.querySelector('input[type="text"]');
+
+function verifyName(str) {
+  regexp = /^[a-z ,.'-]+$/i;
+  if (regexp.test(str)) {
+    console.log("pass");
+    return true;
+  } else {
+    console.log("fail");
+  }
+}
+
+function verifyEmail(str) {
+  regexp = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  if (regexp.test(str)) {
+    return true;
+  } else {
+    console.log("not a valid email");
+    return false;
+  }
+}
+
+const validateFormEntries = () => {
+  if (verifyName(formName.value) && verifyEmail(formEmail.value)) {
+    console.log("pass both");
+  }
+};
+
+const validateForm = () => {};
+
+formEmail.addEventListener("focus", (event) => {
+  validateFormEntries();
+});
+
+formEmail.addEventListener("blur", (event) => {
+  validateForm();
+});
+
+formEmail.addEventListener("change", (event) => {
+  validateForm();
+});
+formName.addEventListener("change", (event) => {
+  validateForm();
+});
+
+formName.addEventListener("focus", (event) => {
+  validateForm();
+});
+
+formName.addEventListener("blur", (event) => {
+  validateForm();
+});
