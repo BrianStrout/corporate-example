@@ -421,12 +421,13 @@ body {
 
 .city-block {
   position: relative;
-  margin-left: 10%;
-  width: 80%;
+  /* margin-left: 10%; */
+  width: 100%;
   min-height: 200px;
   background: url("images/erik-torres-mTMMKcHBvRg-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 0% 20%;
 }
 
 .culture-container {
@@ -475,6 +476,7 @@ body {
 }
 
 .our-culture {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -486,6 +488,24 @@ body {
   max-height: 100vh;
   overflow-y: hidden;
 }
+
+.clicked {
+  overflow-y: scroll;
+}
+
+.click-to-scroll {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem;
+  background-color: beige;
+  border: 3px solid var(--border-blue);
+}
+.click-to-scroll > h6 {
+  font-size: 1rem;
+  pointer-events: none;
+}
+
 .title {
   display: inline;
   text-decoration: underline;

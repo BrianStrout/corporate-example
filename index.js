@@ -7,12 +7,19 @@ const b3 = "images/brooke-cagle--uHVRvDr7pg-unsplash.jpg";
 const jumpToContact = document.getElementById("jumpToContact");
 const contacter = document.getElementById("contacter");
 const image = document.getElementById("img-flipper");
+const clickToScroll = document.getElementById("clickToScroll");
+const cultureContent = document.getElementById("ourCulture");
+
 let currentPos = 0;
 let images2 = [b1, b2, b3];
 
 jumpToContact.addEventListener("click", () => {
   contacter.scrollIntoView();
   console.log("contact");
+});
+
+clickToScroll.addEventListener("click", () => {
+  cultureContent.classList.add("clicked");
 });
 
 function volgendefoto() {
